@@ -23,7 +23,7 @@ function Overview() {
 
   useEffect(() => {
     axios
-      .get(`/products/${productId}/styles`)
+      .get(`http://localhost:4000/products/${productId}/styles`)
       .then((res) => setStyles(res.data.results))
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));

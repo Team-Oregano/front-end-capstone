@@ -48,7 +48,7 @@ export default function App() {
   // update the context store when a new product is selected
   useEffect(() => {
     axios
-      .get(`/products/${productId}`)
+      .get(`http://localhost:4000/products/${productId}`)
       .then((results) => setProductInfo(results.data))
       // eslint-disable-next-line no-console
       .catch(console.error);

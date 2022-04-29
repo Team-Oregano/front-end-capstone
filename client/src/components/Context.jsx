@@ -21,11 +21,11 @@ const ProductContext = React.createContext({
   //   setProductId(newProductId);
   // };
 
-  productId: 38321,
+  productId: 25678,
   setProductId: (/* newId */) => { /* sets productId to newId */ },
 
   productInfo: {
-    id: 38321,
+    id: 25678,
     campus: 'hr-rfe',
     name: 'The Garnet Sweatpants',
     slogan: 'Unde minima dolor quae quo nesciunt.',

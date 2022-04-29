@@ -21,7 +21,7 @@ function RelatedItems() {
 
   useEffect(() => {
     axios
-      .get(`/products/${productId}/related`)
+      .get(`http://localhost:4000/products/${productId}/related`)
       .then((res) => setRelatedItems(res.data))
       .catch((err) => console.error(err));
   }, [productId]);
@@ -31,7 +31,7 @@ function RelatedItems() {
       relatedItems.map((product) =>
         // eslint-disable-next-line implicit-arrow-linebreak
         axios
-          .get(`/products/${product}/styles`)
+          .get(`http://localhost:4000/products/${product}/styles`)
           .then((response) => response.data)
           .catch((err) => console.error(err))),
     ).then((response) => setRelatedItemsImg(response))
@@ -41,7 +41,7 @@ function RelatedItems() {
       relatedItems.map((product) =>
         // eslint-disable-next-line implicit-arrow-linebreak
         axios
-          .get(`/products/${product}`)
+          .get(`http://localhost:4000/products/${product}`)
           .then((response) => response.data)
           .catch((err) => console.error(err))),
     ).then((res) => setRelatedItemsDetails(res));
@@ -74,8 +74,8 @@ function RelatedItems() {
 
   useEffect(() => {
     if (yourOutfitId) {
-      const getYOImages = axios.get(`/products/${yourOutfitId}/styles`);
-      const getYODetails = axios.get(`/products/${yourOutfitId}`);
+      const getYOImages = axios.get(`http://localhost:4000/products/${yourOutfitId}/styles`);
+      const getYODetails = axios.get(`http://localhost:4000/products/${yourOutfitId}`);
       const getYOReviews = axios.get(`/reviews/?product_id=${yourOutfitId}`);
       axios
         .all([getYOImages, getYODetails, getYOReviews])
